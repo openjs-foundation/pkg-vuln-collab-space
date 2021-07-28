@@ -46,7 +46,6 @@ The Chair emphasized the need to define a clear scope for the work. Discussion e
         * synk
         * container scanners (often use OS info)
     * Naugtur should be independant
-    * 
 
 * Brainstorming ideas
   *  
@@ -62,5 +61,4 @@ The Chair emphasized the need to define a clear scope for the work. Discussion e
      * Find security researchers
      * People from company security people
          * from snyk, npm, netflix, rh/ibm?
-
 
