@@ -40,7 +40,7 @@ The Chair emphasized the need to define a clear scope for the work. Discussion e
     * Michael advocate with keeping the focus on the JS ecosystem with the the understanding that we would later test solutions against other ecosystems
     * Naughur suggested that JS community has biggest challenge on this front, and will be difficult to pull in all of the different ecosystems
     * Darcy, from discussions in GitHub would want to figure out additional metadata that goes along with CVEs. Would be good if we propose what additional info would be useful (could be JS specific to start). His team is going to propose schema for what maintainers could provide to go along with CVE. They have been ideating around the area for a while and want to do something sooner than later.
-    * Wes, great to hear npm/github is prioritizing, this group should help fasciliate without ever getting in the way.
+    * Wes, great to hear npm/github is prioritizing, this group should help facilitate without ever getting in the way.
     * Wes where are CVEs being made visible
         * npm
         * synk
