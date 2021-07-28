@@ -53,6 +53,7 @@ The Chair emphasized the need to define a clear scope for the work. Discussion e
 **Action Items:**
  * Start document on what tools report CVEs to customers
    * npm
+   * github
    * snyk
    * container scanners (often use OS info)
  * Naugtur to contribute his schema as starting point to the repo
