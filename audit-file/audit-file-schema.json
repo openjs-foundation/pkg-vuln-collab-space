@@ -1,0 +1,82 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://github.com/openjs-foundation/pkg-vuln-collab-space",
+    "title": "Audit File format for storage and exchange",
+    "description": "TBD",
+    "type": "object",
+    "properties": {
+        "version": {
+            "type": "number",
+            "minimum": 2,
+            "description": "Version of the file format. (Version 1 is already used in the ecosystem)"
+        },
+        "owner":{
+            "type":"object",
+            "properties":{
+                "package": {
+                    "type": "string",
+                    "description": "Name of the package whose decisions the file describes. Can represent current package or versionthe public name of the package which presents its decisions by publishing the file."
+                },
+                "author": {
+                    "type": "string",
+                    "description": "Person or groups publishing the decisions file."
+                },
+                "publicationDate": { "$ref": "#/schemas/HumanFriendlyDate" }
+            }
+        },
+        "decisions": {
+            "type": "object",
+            "description": "A map of decision about vulnerabilities found. Key format: ADVISORY_ID|DEPENDENCY_PATH_WITH_>_AS_SEPARATOR",
+            "patternProperties": {
+                "^[0-9]+\\|([^|>]>)*[^|>]+$": {
+                    "$ref": "#/schemas/Decision" 
+                }
+            }
+        },
+        "rules": {
+            "type": "object",
+            "properties": {
+                "ignoreConfig": {
+                    "type": "object"
+                }
+            }
+        }
+    },
+    "required": [
+        "version",
+        "decisions"
+    ],
+    "schemas": {
+        "Decision":{
+            "type": "object",
+            "required": [
+                "decision"
+            ],
+            "properties": {
+                "decision": {
+                    "type": "string",
+                    "enum": [
+                        "none",
+                        "fix",
+                        "ignore",
+                        "postpone"
+                    ]
+                },
+                "reason": {
+                    "type": "string"
+                },
+                "madeAt": { "$ref": "#/schemas/HumanFriendlyDate" },
+                "expiresAt": { "$ref": "#/schemas/HumanFriendlyDate" }
+            }
+        },
+        "HumanFriendlyDate":{
+            "oneOf":[{
+                "type": "string",
+                "description": "A date/time format that's easy to manipulate by humans."
+            },{
+                "type": "number",
+                "description": "Unix timestamp must be supported by implementers but is not recommended for output to file."
+            }]
+        }
+    }
+}
